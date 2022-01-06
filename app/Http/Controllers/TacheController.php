@@ -46,7 +46,7 @@ class TacheController extends Controller
 			'date_limite' => $date_limite ,
         ]);
     
-        return redirect('/')->with('success', 'Tache créer avec succèss');
+        return redirect('/');
     }
 
     public function valider($id)
@@ -56,7 +56,7 @@ class TacheController extends Controller
 
 		Tache::whereId($id)->update(["est_fait" => $est_fait]);
     
-        return redirect('/')->with('success', 'Tache mise à jour avec succèss');
+        return redirect('/');
 	}
 
     /**
@@ -85,7 +85,7 @@ class TacheController extends Controller
 			"date_limite" => $date_limite,
 		]);
     
-        return redirect('/')->with('success', 'Tache mise à jour avec succèss');
+        return redirect('/');
     }
 
     /**
@@ -99,6 +99,6 @@ class TacheController extends Controller
         $tache = Tache::findOrFail($id);
         $tache->delete();
 
-        return redirect('/')->with('success', 'Tache supprimer avec succèss');
+        return redirect('/');
     }
 }
