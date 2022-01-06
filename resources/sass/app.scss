@@ -1,0 +1,79 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.input-text-ajout {
+    border: none;
+    width: 65%;
+    float: left;
+}
+
+.titre{
+    color: $bleu;
+    margin: 10px;
+}
+
+#tache{
+    border: none;
+}
+
+#date{
+    background-color: white;
+    border: 10px;
+    border-radius: 5px;
+    border: solid;
+    border-color: yellow;
+}
+
+#date i{
+    color: yellow;
+}
+
+.form-ajout{
+    background-color: white;
+    height: 70px;
+    border-radius: 5px;
+    margin: 10px;
+    padding-top: 22px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.addBtn {
+    border: none;
+    width: 10%;
+    height: 30px;
+    background: $bleu;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.calendrier{
+    width: 5%;
+}
+
+.myDiv {
+    background: #e9ecef;
+    border-radius: 10px;
+    font: $font-family-sans-serif;
+    padding: 10px;
+}
+
+#modif,#supprimer, #calen  {
+    visibility : hidden;
+ }
+
+ .row:hover #supprimer { 
+    visibility : visible;
+}
+
+.row:hover #modif { 
+    visibility : visible;
+}
