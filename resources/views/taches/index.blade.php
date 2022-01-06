@@ -12,7 +12,7 @@
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ...">
-            <i class="glyphicon glyphicon-calendar"> <input class="calendrier" type="text" name="date_limite"  id='datetimepicker'></button></i>
+            <span class="glyphicon glyphicon-calendar"><input name="date_limite" id='datetimepicker'></span>
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
@@ -44,7 +44,6 @@
                             </form>
                         @endif
                     </div>
-
                     
                     @if(  $tache->date_limite && $tache->est_fait == 0)
                         <div class="col-md-auto" id="date">
@@ -52,31 +51,6 @@
                             {{ date('d M Y',strtotime($tache->date_limite))}}
                         </div>  
                     @endif
-
-                    
-                    @if( $tache->est_fait == 0)
-                        <div class="col-md-auto" id="modif">
-                            <button id="modifier" ><span class="glyphicon glyphicon-edit"></span></button>
-                        </div>
-                    @endif
-
-                    
-                    @if( $tache->est_fait == 0)
-                        <div class="col-md-auto" id="calen">
-                            <button><i class="glyphicon glyphicon-calendar"></i></button>
-                        </div>
-                    @endif
-                    
-
-                    <div class="col-md-auto" id="supprimer">
-                        <form action="/tache/{{ $tache->id }}"  method="POST">
-                            <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </form>
-                    </div>
                 </div>
             @endforeach
     </div>

@@ -11289,7 +11289,6 @@ textarea.form-control-lg {
 .input-text-ajout {
   border: none;
   width: 65%;
-  float: left;
 }
 
 .titre {
@@ -11302,11 +11301,16 @@ textarea.form-control-lg {
 }
 
 #date {
+  height: 30px;
   background-color: white;
   border: 10px;
   border-radius: 5px;
   border: solid;
   border-color: yellow;
+}
+
+#date, #modif, #supprimer, #calen {
+  float: right;
 }
 
 #date i {
@@ -11318,7 +11322,7 @@ textarea.form-control-lg {
   height: 70px;
   border-radius: 5px;
   margin: 10px;
-  padding-top: 22px;
+  padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -11343,17 +11347,9 @@ textarea.form-control-lg {
   border-radius: 10px;
   font: "Nunito", sans-serif;
   padding: 10px;
-  margin: 5%;
 }
 
-#modif, #supprimer, #calen {
-  visibility: hidden;
-}
-
-.row:hover #supprimer {
-  visibility: visible;
-}
-
-.row:hover #modif {
-  visibility: visible;
+.row {
+  width: 100%;
+  height: 50px;
 }
