@@ -5,13 +5,13 @@
 <div class="myDiv">
     <div class="header">
         <h1 class="titre">
-            <i class="glyphicon glyphicon-check"></i>
+            <i class="bi bi-check-square-fill"></i>
             Exercice To-do list
         </h1>
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ...">
-            <span class="glyphicon glyphicon-calendar"><input name="date_limite" id='datetimepicker'></span>
+            <span class="glyphicon glyphicon-calendar"><input name="date_limite" class='datetimepicker'></span>
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
@@ -31,17 +31,29 @@
                     @endif
                 </form>
             </div>
-            <div class="col col-10 tacheTable">
+            <div class="col col-10 tache">
                 @if(  $tache->est_fait == 1)
                 <s> {{ $tache->tache }} </s>
                 @else
-                <form action="/tache/{{ $tache->id }}/edit"  method="POST">
+                {{ $tache->tache }}
+                @endif
+            </div>
+            <div class="col  col-11 editTache">
+                <form action="/tache/{{ $tache->id }}/edit" class="editForm" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
                     <input type="hidden" name="_method" value="PUT">
-                    <input type="text" name="tache"  disabled="disabled" class="tache" value="{{ $tache->tache }}">
-                    <input type="hidden"  name="date_limite"  id='datetimepicker' >
+                    <div class="row">
+                        <div class="col col-10 tacheEdit">
+                            <input type="text" name="tache" value="{{ $tache->tache }}">
+                        </div>
+                        <div  class="col col-btn">
+                            <span class="glyphicon glyphicon-calendar"><input type="text" value="{{ $tache->date_limite }}" name="date_limite"></span>
+                        </div>
+                        <div class="col col-md-auto">
+                            <input type="submit" style="visibility: hidden;" />
+                        </div>
+                    </div>
                 </form>
-                @endif
             </div>
             <div class="col col-md-auto dateTable">
                 @if(  $tache->date_limite && $tache->est_fait == 0)
@@ -51,24 +63,20 @@
                 </div>  
                 @endif
             </div>
-            <div class="col col-btn">
-                <div class="row">
-                    <div  class="col col-btn col-md-auto">
-                        @if( $tache->est_fait == 0)
-                            <button class="modifier" ><span class="glyphicon glyphicon-edit"></span></button>
-                        @endif
-                    </div>
-                    
-                    <div class="col col-btn col-md-auto">
-                        <form action="/tache/{{ $tache->id }}"  method="POST">
-                            <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+            <div  class="col col-btn btnModif">
+                @if( $tache->est_fait == 0)
+                    <button class="modifier" ><span class="glyphicon glyphicon-edit"></span></button>
+                @endif
+            </div>
+            
+            <div class="col col-btn btnSupp">
+                <form action="/tache/{{ $tache->id }}"  method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </form>
             </div>
         </div>
         @endforeach

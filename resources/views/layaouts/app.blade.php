@@ -20,31 +20,59 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$('#datetimepicker').datetimepicker({  
+				$('.datetimepicker').datetimepicker({  
 					format: 'DD/MM/YYYY'
 				});
 			});
 		</script>
 
-		<script>
-
-			$(document).ready(function(){
-				$('.col-btn').hide();
-				$('.calendrier').hide();
+		<script type="text/javascript">
+			$(function(){
+				$('.editTache').hide();
 				
-
-				$('.row').hover(
-				function(){ 
-					$(this).find('.dateTable').hide(),
-					$(this).find('.col-btn').show();
-				},
-				function(){  
-					$(this).find('.dateTable').show(),
-					$(this).find('.col-btn').hide();
-				});
+				$('.liste').hover(
+					function(){
+						$(this).on('click',".modifier",
+							function () {
+								$('.liste').mouseover(
+									function(){ 
+										$(this).find(".btnModif").hide(),
+										$(this).find(".tache").hide(),
+										$(this).find(".editTache").show();
+									}
+								).mouseleave(
+									function(){  
+										$(this).find(".tache").show(),
+										$(this).find(".editTache").hide(),
+										location.reload();
+									}
+								);
+							}
+						)
+					}
+				);
 			});
-			
 		</script>
 
+		<script>
+			$(document).ready(function(){
+				$('.btnSupp').hide(),
+				$('.btnModif').hide();
+				
+				$('.liste').mouseover(
+					function(){ 
+						$(this).find('.dateTable').hide(),
+						$(this).find('.btnSupp').show(),
+						$(this).find('.btnModif').show();
+					}
+				).mouseout(
+					function(){  
+						$(this).find('.dateTable').show(),
+						$(this).find('.btnSupp').hide(),
+						$(this).find('.btnModif').hide();
+					}
+				);
+			});
+		</script>
 	</body>
 </html>
