@@ -11286,35 +11286,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.input-text-ajout {
-  border: none;
-  width: 65%;
+.myDiv {
+  background: #e9ecef;
+  border-radius: 10px;
+  font: 1.5rem sans-serif;
+  padding: 10px;
 }
 
 .titre {
   color: #2d30f7;
   margin: 10px;
-}
-
-#tache {
-  border: none;
-}
-
-#date {
-  height: 30px;
-  background-color: white;
-  border: 10px;
-  border-radius: 5px;
-  border: solid;
-  border-color: yellow;
-}
-
-#date, #modif, #supprimer, #calen {
-  float: right;
-}
-
-#date i {
-  color: yellow;
 }
 
 .form-ajout {
@@ -11342,14 +11323,43 @@ textarea.form-control-lg {
   width: 5%;
 }
 
-.myDiv {
-  background: #e9ecef;
-  border-radius: 10px;
-  font: "Nunito", sans-serif;
+.input-text-ajout {
+  border: none;
+  width: 65%;
+}
+
+.liste {
+  height: 50px;
+  width: 95%;
   padding: 10px;
 }
 
-.row {
-  width: 100%;
-  height: 50px;
+.tacheTable {
+  text-align: left;
+}
+
+.tache {
+  border: none;
+}
+
+.dateTable .date {
+  width: 125px;
+  height: 30px;
+  background-color: white;
+  border: 10px;
+  border-radius: 5px;
+  border: solid;
+  border-color: yellow;
+}
+
+.dateTable .date i {
+  color: yellow;
+}
+
+.col-btn .row {
+  float: right;
+}
+
+.col-btn .row .col-btn {
+  width: 50px;
 }
