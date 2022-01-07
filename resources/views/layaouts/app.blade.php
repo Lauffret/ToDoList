@@ -20,9 +20,13 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$('.datetimepicker').datetimepicker({  
-					format: 'DD/MM/YYYY'
-				});
+				$('.datetimepicker').hover(
+					function(){
+						$('.this').datetimepicker({  
+							format: 'DD/MM/YYYY'
+						});
+					}
+				)
 			});
 		</script>
 

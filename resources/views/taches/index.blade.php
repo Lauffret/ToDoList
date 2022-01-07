@@ -11,7 +11,7 @@
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ...">
-            <span class="glyphicon glyphicon-calendar"><input name="date_limite" class='datetimepicker'></span>
+            <button class="btnCalIn"><i class="bi bi-calendar2-week-fill"></i><input type="hidden" name="date_limite" class='datetimepicker'></button>
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
@@ -47,7 +47,7 @@
                             <input type="text" name="tache" value="{{ $tache->tache }}">
                         </div>
                         <div  class="col col-btn">
-                            <span class="glyphicon glyphicon-calendar"><input type="text" value="{{ $tache->date_limite }}" name="date_limite"></span>
+                            <button class="btnCal" name="date_limite"><i class="bi bi-calendar2-week-fill"></i></button>
                         </div>
                         <div class="col col-md-auto">
                             <input type="submit" style="visibility: hidden;" />
@@ -58,14 +58,14 @@
             <div class="col col-md-auto dateTable">
                 @if(  $tache->date_limite && $tache->est_fait == 0)
                 <div class="date">
-                    <i span class="glyphicon glyphicon-star"></i>
+                    <i class="bi bi-hourglass-split"></i>
                     {{ date('d M Y',strtotime($tache->date_limite))}}
                 </div>  
                 @endif
             </div>
             <div  class="col col-btn btnModif">
                 @if( $tache->est_fait == 0)
-                    <button class="modifier" ><span class="glyphicon glyphicon-edit"></span></button>
+                    <button class="modifier" ><i class="bi bi-pencil-fill"></i></button>
                 @endif
             </div>
             
@@ -73,8 +73,8 @@
                 <form action="/tache/{{ $tache->id }}"  method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <button type="submit" class="btn-supp">
+                        <i class="bi bi-trash-fill"></i>
                     </button>
                 </form>
             </div>

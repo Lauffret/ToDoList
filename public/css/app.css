@@ -17478,8 +17478,14 @@ textarea.form-control-lg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.calendrier {
+.btnCalIn {
   width: 5%;
+  color: #2d30f7;
+  background-color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .input-text-ajout {
@@ -17508,14 +17514,32 @@ textarea.form-control-lg {
   border: 10px;
   border-radius: 5px;
   border: solid;
-  border-color: yellow;
+  border-color: rgba(255, 255, 0, 0.774);
 }
 
 .dateTable .date i {
-  color: yellow;
+  color: rgba(255, 255, 0, 0.774);
 }
 
 .col-btn, .editTache .col-btn {
   float: right;
   width: 50px;
+}
+
+.modifier, .btnCal {
+  background-color: #e9ecef;
+  border: none;
+  color: #00aeff;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-supp {
+  background-color: #e9ecef;
+  border: none;
+  color: red;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }
