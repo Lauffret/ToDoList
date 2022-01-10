@@ -13,4 +13,17 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
+    .options({
+        processCssUrls: false
+     })
+    .version()
+    .browserSync({
+        proxy: {
+            target: process.env.MIX_APP_URL,
+            proxyReq: [
+                function(proxyReq) {
+                    proxyReq.setHeader('Access-Control-Allow-Origin', '*');
+                }
+            ]},
+        cors: true
+    });

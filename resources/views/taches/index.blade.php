@@ -10,12 +10,22 @@
         </h1>
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ...">
-            <button class="btnCalIn"><i class="bi bi-calendar2-week-fill"></i><input type="hidden" name="date_limite" class='datetimepicker'></button>
+            <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ..."> 
+
+            <div class='input-group datetimepicker btnCalIn'>
+                <input name="date_limite" type="hidden">
+                <span class="input-group-addon">
+                    <span class="bi bi-calendar2-week-fill btnCalIn" ></span>
+                </span>
+            </div>
+            
+
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
+
     <HR>
+
     @if (count($taches) > 0)
     <div class="container">
         @foreach ($taches as $tache)
@@ -46,8 +56,10 @@
                         <div class="col col-10 tacheEdit">
                             <input type="text" name="tache" value="{{ $tache->tache }}">
                         </div>
-                        <div  class="col col-btn">
-                            <button class="btnCal" name="date_limite"><i class="bi bi-calendar2-week-fill"></i></button>
+                        <div  class="col col-btn btnCal">
+                            <span class="bi bi-calendar2-week-fill datetimepicker">
+                                <input type="text" name='date_limite' value="{{ $tache->date_limite}}">
+                            </span>
                         </div>
                         <div class="col col-md-auto">
                             <input type="submit" style="visibility: hidden;" />

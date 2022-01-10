@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -11288,7 +11287,7 @@ textarea.form-control-lg {
 }
 @font-face {
   font-family: "bootstrap-icons";
-  src: url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?2b56e79ae5013246de291c3bd46c2c1b) format("woff2"), url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?38c4d2499557ae0379fd160e190c331c) format("woff");
+  src: url("./fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d") format("woff2"), url("./fonts/bootstrap-icons.woff?30af91bf14e37666a085fb8a161ff36d") format("woff");
 }
 .bi::before,
 [class^=bi-]::before,
@@ -17478,8 +17477,8 @@ textarea.form-control-lg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.btnCalIn {
-  width: 5%;
+.btnCalIn .input-group-addon {
+  width: 50px;
   color: #2d30f7;
   background-color: white;
   border: none;
@@ -17490,7 +17489,7 @@ textarea.form-control-lg {
 
 .input-text-ajout {
   border: none;
-  width: 65%;
+  width: 60%;
 }
 
 .liste {
