@@ -30,7 +30,7 @@
         @foreach ($taches as $tache)
         <div class="row liste">
             <div class="col col-md-auto">
-                <form action="/tache/{{ $tache->id }}"  method="POST">
+                <form action="{{url('/tache/'.$tache->id)}}"  method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
                     <input type="hidden" name="_method" value="PUT">
                     @if(  $tache->est_fait == 1)
@@ -48,7 +48,7 @@
                 @endif
             </div>
             <div class="col  col-11 editTache">
-                <form action="/tache/{{ $tache->id }}/edit" class="editForm" method="POST">
+                <form action="{{url('/tache/'.$tache->id.'/edit')}}" class="editForm" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
                     <input type="hidden" name="_method" value="PUT">
                     <div class="row">
@@ -84,7 +84,7 @@
             </div>
             
             <div class="col col-btn btnSupp">
-                <form action="/tache/{{ $tache->id }}"  method="POST">
+                <form action="{{url('/tache/'.$tache->id)}}"  method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn-supp">
