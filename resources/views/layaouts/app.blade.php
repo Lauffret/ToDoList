@@ -27,6 +27,10 @@
 				$('.datetimepicker').datetimepicker({
 					format: 'DD/MM/YYYY'
 				});
+
+				$('.bi-calendar2-week-fill').on('click',function(){
+					$('.datetimepicker').focus();
+				});
 			 });
 		</script> 
 

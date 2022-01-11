@@ -11320,7 +11320,7 @@ textarea.form-control-lg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.btnCalIn .input-group-addon {
+.btnCalIn {
   width: 50px;
   color: #2d30f7;
   background-color: white;

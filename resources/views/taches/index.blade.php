@@ -11,15 +11,8 @@
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ..."> 
-
-            <div class='input-group datetimepicker btnCalIn'>
-                <input name="date_limite" type="hidden">
-                <span class="input-group-addon">
-                    <span class="bi bi-calendar2-week-fill btnCalIn" ></span>
-                </span>
-            </div>
-            
-
+            <input name="date_limite" class="datetimepicker" type="hidden">
+            <i class="bi bi-calendar2-week-fill btnCalIn"></i>
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
@@ -56,10 +49,9 @@
                         <div class="col col-10 tacheEdit">
                             <input type="text" name="tache" value="{{ $tache->tache }}">
                         </div>
-                        <div  class="col col-btn btnCal">
-                            <span class="bi bi-calendar2-week-fill datetimepicker">
-                                <input type="text" name='date_limite' value="{{ $tache->date_limite}}">
-                            </span>
+                        <div  class="col col-btn btnCal ">
+                            <input type="text" class="datetimepicker" name='date_limite' value="{{ $tache->date_limite}}">
+                            <i class="bi bi-calendar2-week-fill"></i>
                         </div>
                         <div class="col col-md-auto">
                             <input type="submit" style="visibility: hidden;" />
