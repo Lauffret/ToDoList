@@ -11,8 +11,14 @@
         <form action="{{url('tache')}}" method="post" class="form-ajout" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="input-text-ajout" type="text" name="tache" placeholder="Nouvelle tâche ..."> 
-            <input name="date_limite" class="datetimepicker" type="hidden">
-            <i class="bi bi-calendar2-week-fill btnCalIn"></i>
+            <div class="input-group">
+                <label class="input-group-btn" for="date">
+                    <span class="btnCalIn">
+                        <span class="bi bi-calendar2-week-fill"></span>
+                    </span>
+                </label>
+                <input type="text" name="date_limite" class="inputDate" id="date" />
+            </div>
             <button type="submit" class="addBtn" >AJOUTER</button>
         </form> 
     </div> 
@@ -49,9 +55,13 @@
                         <div class="col col-10 tacheEdit">
                             <input type="text" name="tache" value="{{ $tache->tache }}">
                         </div>
-                        <div  class="col col-btn btnCal ">
-                            <input type="text" class="datetimepicker" name='date_limite' value="{{ $tache->date_limite}}">
-                            <i class="bi bi-calendar2-week-fill"></i>
+                        <div  class="col col-btn input-group btnCal ">
+                                <label class="input-group-btn" for="dateEdit{{ $tache->id}}">
+                                    <span class="btnCal">
+                                        <span class="bi bi-calendar2-week-fill"></span>
+                                    </span>
+                                </label>
+                                <input type="text" name="date_limite"  value="{{ $tache->date_limite}}"  class="inputDate datetimepicker" id="dateEdit{{ $tache->id}}"/>
                         </div>
                         <div class="col col-md-auto">
                             <input type="submit" style="visibility: hidden;" />
